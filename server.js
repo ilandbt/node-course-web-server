@@ -2,7 +2,7 @@ var middleware = require('./middleware.js');
 var express = require('express');
 var app = express();
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 
 //application level midd;e ware
@@ -19,6 +19,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.listen(PORT, function() {
-	console.log('express server started in port: ' + PORT );});
+	console.log('express server started in port: ' + PORT );
+});
 
 
